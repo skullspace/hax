@@ -1,0 +1,29 @@
+<VirtualHost *:80>
+        ServerAdmin mark@parit.ca
+        ServerName hax.vmsrv.skullspace.ca
+        ServerAlias hax.skull.space
+        DocumentRoot /var/www/hax/
+
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory /var/www/hax>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride None
+                Order allow,deny
+                Allow from all
+        </Directory>
+
+        ScriptAlias /hax.cgi /var/www/hax/hax.cgi
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        # Possible values include: debug, info, notice, warn, error, crit,
+        # alert, emerg.
+        LogLevel warn
+
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+        SuexecUserGroup hax nogroup
+</VirtualHost>
+
