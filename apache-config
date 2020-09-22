@@ -1,7 +1,6 @@
 <VirtualHost *:80>
         ServerAdmin mark@parit.ca
-        ServerName hax.vmsrv.skullspace.ca
-        ServerAlias hax.skull.space
+        ServerName hax.skullspace.ca
         DocumentRoot /var/www/hax/
 
         <Directory />
@@ -15,7 +14,8 @@
                 Allow from all
         </Directory>
 
-        ScriptAlias /hax.cgi /var/www/hax/hax.cgi
+        #ScriptAlias /hax.cgi /var/www/hax/hax.cgi
+	#SuexecUserGroup hax nogroup
 
         ErrorLog ${APACHE_LOG_DIR}/error.log
         # Possible values include: debug, info, notice, warn, error, crit,
@@ -24,6 +24,6 @@
 
         CustomLog ${APACHE_LOG_DIR}/access.log combined
 
-        SuexecUserGroup hax nogroup
+        
 </VirtualHost>
 
