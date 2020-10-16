@@ -4,6 +4,7 @@ index.html: frontpageheader.html schedule.html donate.html donatefreetail.html f
 	cat $^ > $@
 
 free/index.html: freehead.html festivalstart.html donate.html freechat.html footer.html
+	mkdir -p free
 	cat $^ > $@
 
 clean:
